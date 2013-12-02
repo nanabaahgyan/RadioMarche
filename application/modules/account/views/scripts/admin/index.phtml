@@ -1,0 +1,82 @@
+<script type="text/javascript">
+	$(function() {
+		$( "a", "#button" ).button();
+	});
+</script>
+
+<?php if (count($this->names)):
+	echo "Newly registered user(s)"; ?>
+		<table>
+			<?php $counter = 1; ?>
+			<?php foreach ($this->names as $namesKey => $namesValue):
+					foreach ($this->ids as $idsKey => $idsValue ):
+						if ($namesKey == $idsKey):
+			?>
+			<tr>
+				<td><?php echo $counter++ ;?></td>
+				<td><?php echo $namesValue; ?></td>
+				
+	 			<td><a id="button" href="<?php echo $this->url(array(
+            									'module'=>'account',
+			    								'controller'=>'admin',
+			    								'action'=>'add-new-user',
+			    								'id'=>$this->escape($idsValue['user_id'])),
+			    								'default', true
+            									);?>">Add User</a>
+            	</td>
+            	<td><a id="button" href="<?php echo $this->url(array(
+            									'module'=>'account',
+			    								'controller'=>'admin',
+			    								'action'=>'delete-user',
+			    								'id'=>$this->escape($idsValue['user_id'])),
+			    								'default', true
+            									);?>">Remove User</a>
+            	</td>
+			</tr>
+						<?php endif; ?>
+					<?php endforeach; ?>
+			<?php endforeach; ?>
+</table>
+<?php endif; ?>
+
+<table id="button">
+	<tr>
+		<td align="left">
+			<a href="#">NEW USER</a>
+		</td>
+	</tr>
+	<tr>
+		<td align="left">
+			<a href="<?php echo $this->url(array(
+												'module' => 'account',
+												'controller' => 'admin',
+												'action' => 'create-fulltext-index'),
+												'default', true);?>" class="home-button">
+				CREATE SEARCH INDEX
+			</a>
+		</td>
+	</tr>
+	<tr>
+		<td align="left">
+			<a href="<?php echo $this->url(array(
+												'module' => 'account',
+												'controller' => 'admin',
+												'action' => 'synchronize-communique-platform'),
+												'default', true);?>" class="home-button">
+				SYNC PLATFORM
+			</a>
+		</td>
+	</tr>
+	<tr>
+		<td align="left">
+			<a href="<?php echo $this->url(array(
+            									'module'=>'account',
+            									'controller'=>'admin',
+            									'action'=>'create-communique-stats'),
+            									'default', true);?>" class="home-button">
+            	COMMUNIQUE STATS
+            </a>
+        </td>
+	</tr>
+	
+</table>

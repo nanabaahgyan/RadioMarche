@@ -1,0 +1,19 @@
+<?php
+$this->headTitle('Delete Communique From Store');
+?>
+<p><?php echo $this->translate('com-confirm-delete');?>
+
+<?php foreach ($this->results as $r): ?>
+'<?php echo $this->communique;?>'?
+</p>
+
+<form action="<?php echo $this->url(array('controller' => 'ngo',
+										  'action' => 'delete-communique-from-store'));?>"
+      method="post">
+<div>
+	<input type="hidden" name="id" value="<?php echo $this->escape($r['com_id']);?>"/>
+	<input type="submit" name="del" value="<?php echo $this->translate('yes');?>"/>
+	<input type="submit" name="del" value="<?php echo $this->translate('no');?>"/>
+</div>
+</form>
+<?php endforeach;?>

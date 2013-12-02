@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<product-offering>
+ <id number="5" date-created="20110811">
+  	<name>miel liquide</name>
+  	<unit>l</unit>
+  	<quantity>200.00</quantity>
+  	<quality></quality>
+  	<price>2000.00</price>
+	<currency>cfa</currency>
+  	<contact-name>Zakary Diarra</contact-name>
+  	<contact-phone>78571299</contact-phone>
+ </id>
+ <id number="6" date-created="20110811">
+  	<name>graine de nere</name>
+  	<unit>kg</unit>
+  	<quantity>450.00</quantity>
+  	<quality></quality>
+  	<price>425.00</price>
+	<currency>cfa</currency>
+  	<contact-name>Fidel Kone</contact-name>
+  	<contact-phone></contact-phone>
+ </id>
+ <id number="7" date-created="20110811">
+  	<name>miel liquide</name>
+  	<unit>l</unit>
+  	<quantity>60.00</quantity>
+  	<quality></quality>
+  	<price>2000.00</price>
+	<currency>cfa</currency>
+  	<contact-name>Sabere Diarra</contact-name>
+  	<contact-phone></contact-phone>
+ </id>
+</product-offering>

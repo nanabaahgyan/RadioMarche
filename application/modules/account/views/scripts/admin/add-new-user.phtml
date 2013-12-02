@@ -1,0 +1,23 @@
+<?php echo $this->headTitle('Add New User');?>
+<?php foreach ($this->results as $r): ?>
+<p>Please select the category this user belongs to:</p>
+
+<form action="<?php echo $this->url(array('controller' => 'admin',
+										  'action' => 'add-new-user'));?>"
+      method="post">
+<div>
+<select id="usertypes" name="usertypes">
+	<option label="[Please Select]" value="Please Select">[Please Select]</option>
+	<option label="Radio" value="rad">Radio</option>
+	<option label="Sahel Eco" value="ngo">Sahel Eco</option>
+	<option label="Administrator" value="admin">Administrator</option>
+</select>
+</div>
+<p>Do you really want to add <?php echo ucfirst($this->escape($r['profile_value']));?> to the system? </p>
+<div>
+	<input type="hidden" name="id" value="<?php echo $this->escape($r['user_id']);?>"/>
+	<input type="submit" name="add" value="Yes"/>
+	<input type="submit" name="add" value="No"/>
+</div>
+</form>
+<?php endforeach;?>

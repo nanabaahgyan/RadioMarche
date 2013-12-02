@@ -1,0 +1,269 @@
+@CHARSET "UTF-8";
+	body {
+  		margin: 0; 
+  		padding: 0; 
+  		font-family: Verdana, Arial, sans-serif;
+  		color: black;
+  		font-size: 1.1em;
+  		letter-spacing: 0.2px;
+	}
+
+	body a {
+  		text-decoration: none;
+ 	 	font-weight: bold;
+ 	 	color: #2441F5;
+	}
+
+	body a:hover {
+ 	 	text-decoration: underline;
+	}
+
+	html, body {
+ 	   height: 100%;
+	}
+
+	#header {
+	  	height: 120px;
+	  	width: 100%;
+	  	background-color: #336600;
+	  	padding-bottom:2px;
+	}
+
+	.info{
+		margin-left: 50px;
+		margin-right:450px;
+		padding:0px 1px 2px 1px;
+		color: #000;
+		background-color: #ADD8E6;
+		background-repeat: no-repeat;
+		background-image:url('/../images/info.png');
+		background-position: 10px center;
+		padding:0px;
+	}
+	
+/*	.info ul{
+		padding: 10px 1px 10px 1px;
+	}
+	
+	.info ul li{
+		padding: 3px;
+		margin-left: 70px;
+	} */
+	
+	.error{
+		margin-left: 50px;
+		margin-right:450px;
+		padding:0px 1px 2px 1px;
+		color: #D8000C;
+		background-color: #FFBABA;
+		background-repeat: no-repeat;
+		background-image:url('/../images/error.png');
+		background-position: 10px center;
+		padding:0px;
+	}
+	
+	.error ul, .info ul{
+		padding: 10px 1px 10px 1px;
+		list-style-type: none; /* remove list bullet */
+	}
+	
+	.error ul li, .info ul li{
+		padding: 3px;
+		margin-left: 70px;
+	}
+	
+	#footer a{
+		color: white;
+		font-size: 10px;
+	}
+	
+	#footer {
+		padding-left: 50px;
+		color: white;
+		font-size: 10px;
+   		position:fixed;
+   		left:0px;
+   		bottom:0px;
+   		height:12px;
+   		width:99%;
+   		background:#360;
+	}
+	
+	#footer a#mail{
+		color:black;
+		float:right;
+		padding-right:250px;
+		text-transform: uppercase;
+		font-size: 10px;
+	}
+
+	/* Footer hack for IE 6 */
+	* html #footer {
+   		position:absolute;
+   		top:expression((0-(footer.offsetHeight)+
+               (document.documentElement.clientHeight ? 
+               document.documentElement.clientHeight : document.body.clientHeight)+
+               (ignoreMe = document.documentElement.scrollTop ? 
+               document.documentElement.scrollTop : document.body.scrollTop))+'px');
+	}
+
+	#screen-logo {
+ 	 	float: left;
+ 	 	padding-left: 50px;
+ 	 	padding-top: 2px;  
+ 	 	padding-bottom: 10px;
+	}
+	
+	#print-logo img {display : none;}
+
+	#locale{
+		float: left; 
+		padding-right: 20px;
+		margin-right: 10px;
+	} 
+	
+	#locale a#lang {
+		border: 2px none #36f;
+		padding-top: 10px;
+	}
+
+	#menu {
+  		float: right;
+  		padding-top: 40px;
+  		padding-right: 50px;
+	}
+
+	#menu a {
+ 	 	color: #000;
+	  	font-size: 8pt;
+	  	font-weight: bold;
+	  	border: solid 4px #fff;
+	/*  	padding: 2px; */
+	  	margin-left: 10px;
+	  	margin-right: 10px;
+	  	float: right;
+	}
+
+	#menu a:hover {
+ 	 	color: #000;
+ 	 	font-size: 8pt;
+ 	 	border: solid 4px green;
+ 	 	text-decoration: none;
+	}
+
+	#menu ul, #menu ul li
+	{
+		display: inline;
+		padding: 0px;
+		margin-top: 0px;
+	}
+
+	#navigation.ul{
+		margin-top: 0px;
+	}
+
+	#identity {
+		color: #fff;
+		font-size: 10px;
+		float: left;  
+		padding-top: 10px; 
+		padding-right: 20px
+	}
+
+	#intro{
+		padding-bottom: 10px;	
+	}
+	
+	#content {
+  		min-height: 500px;  
+ 	 	padding-left: 50px;
+ 	 	padding-right: 50px;
+ 	 	padding-top: 0px;
+ 	 	padding-bottom: 80px;
+	}
+
+	form input {
+ 		font-size: 12pt;
+	}
+
+	form textarea {
+ 		font-size: 12pt;
+	}
+
+	form ul.errors {
+  		padding: 0px;  
+  		color: red;
+  		list-style: none;
+	}
+
+	input#captcha {visibility: hidden;} 
+
+	table#log-in tr{
+		background: #D0D0D0;
+	}
+
+	table th{
+		background: #707070;
+	}
+	
+	table tr#odd{
+		background: #EEF3E2
+	}
+
+	table{
+		padding-bottom: 10px;
+	}
+	table td{
+		padding: 5px;
+	}
+	
+	table tr td a#publish {color: red;}
+
+	table td.even {
+		background: #8B7D6B;
+	}
+
+	td#remember-label{
+		font-size: 10px;
+	}
+		
+	table#home tr td {padding: 10px;}
+	
+	br#brspaced{line-height: 12px;}
+
+	table tr td span#listen-audio{
+		padding-bottom: .4em;
+		padding-left: 0em;
+		padding-right: 0em;
+		padding-top: 0em;
+		display: block;
+		line-height: 1.4;
+	}
+	
+	table tr td span#radio-sta-text-down{
+		padding-bottom: 0em;
+		padding-left: 0em;
+		padding-right: 0em;
+		padding-top: 0em;
+		display: block;
+		line-height: 1.4;
+	} 
+	
+	.paginationControl{
+		padding-bottom: 1em;
+	}
+	
+	a.home-button{
+		width: 280px;
+/*		padding-bottom: 0.4em;
+		padding-left: 0.5em;
+		padding-right: 0.5em;
+		padding-top: 0.4em; */
+	}
+	
+	/* message container for confirmation */
+	#message-container { width: 600px; height: 200px; position: center;}
+	#container { width: 820px; height: 365px; padding: 0.4em 0.4em 0em 0.4em; position: relative; }
+	#container h3 { margin: 0; padding: 0.4em; text-align: center; }
+	#container img {height: 300px; float: left; padding-right: 1em;}
+	#container #container-msg {margin-top: 45px; font-size: 2em;}

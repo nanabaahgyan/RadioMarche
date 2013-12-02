@@ -1,0 +1,10 @@
+<h2>Admin Register New User</h2>
+<div id="error">
+<?php if (isset($this->error)):
+		foreach ($this->error as $k => $v)
+			echo "$v"
+?>
+</div>
+<?php endif?>
+
+<?php echo $this->form; ?>

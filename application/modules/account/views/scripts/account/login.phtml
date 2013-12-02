@@ -1,0 +1,10 @@
+<script type="text/javascript">
+	$(function() {// jquery buttons
+		$( "input:submit", "#button" ).button();
+	});
+</script>
+<h2 id=log-in><?php echo $this->translate('form-login');?></h2>
+<?php echo $this->headTitle('Login');?>
+<div id="button">
+	<?php echo $this->form; ?>
+</div>

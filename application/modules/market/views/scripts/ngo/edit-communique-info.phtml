@@ -1,0 +1,13 @@
+<h2><?php echo $this->translate('header-edit-com-info');?></h2>
+<?php
+$this->headTitle($this->translate('header-edit-com-info'));
+?>
+<script type="text/javascript">
+	$(function() {
+		$( "input:submit", "#button" ).button()
+	});
+</script>
+
+<div id="button">
+	<?php echo $this->form;?>
+</div>

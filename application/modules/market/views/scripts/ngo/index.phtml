@@ -1,0 +1,65 @@
+<?php echo $this->headTitle($this->translate('title-ngo-home'));?>
+<h3><?php echo $this->translate('home-select');?></h3>
+<script type="text/javascript">
+	$(function() {
+		$( "a", "#button" ).button()
+	});
+
+	$(function(){
+		var $tabs = $('#tabs').tabs();
+
+		$('#online').click(function() {
+			$tabs.tabs('select','1');
+			return true;
+		//	alert($tabs);
+		});
+	});
+</script>
+
+<table id="button">
+	<tr>
+		<td align="left">
+			<a href="<?php echo $this->url(array(), 'communique-store');?>" class="home-button">
+				<?php echo $this->translate('label-com-online');?>
+			</a>
+		</td>
+	</tr>
+<!-- 	<tr>
+		<td align="left">
+			<a href="<?php echo $this->url(array(
+												'module' => 'market',
+												'controller' => 'market-info',
+												'action' => 'search'),'default', true);
+  												?>">
+  			<?php echo $this->translate('label-search');?></a> 
+		</td>
+	</tr>   -->
+	<tr> 
+		<td align="left">
+			<a href="<?php echo $this->url(array(),'enter-new-offering-info');?>" class="home-button">
+				<?php echo $this->translate('label-new-prod');?>
+			</a>
+		</td>
+	</tr>
+	<tr> 
+		<td align="left">
+			<a href="<?php echo $this->url(array(),'create-new-communique');?>" class="home-button">
+				<?php echo $this->translate('label-new-com');?>
+			</a>
+		</td>
+	</tr>
+	<tr>
+	<!--  	<td align="center">
+			<a href="<?php echo $this->url(array(), 'enter-new-offering-info');?>">
+            	<?php echo $this->translate('label-new-prod');?>
+            </a>
+		</td> -->
+		<td align="left">
+			<a href="<?php echo $this->url(array(),'communique-store');?>" class="home-button">
+			    <span class="ui-icon-circle-plus">
+			    	<?php echo $this->translate('label-com-store');?>
+			    </span>
+			</a>
+		</td>
+  	</tr>
+</table>

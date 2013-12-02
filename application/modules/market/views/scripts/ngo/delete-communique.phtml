@@ -1,0 +1,35 @@
+<script>
+	$(function() {// jquery buttons
+		$( "input:submit", ".button" ).button();
+	});
+</script>
+
+<?php echo $this->headTitle('Delete Communique');?>
+
+<?php foreach ($this->results as $r): ?>
+<form action="<?php echo $this->url(array('controller' => 'ngo',
+										  'action' => 'delete-communique'));?>"
+      method="post">
+<div id="message-container" class="button" >
+	<div id="container" class="ui-widget-content ui-corner-all">
+		<h3 class="ui-widget-header ui-corner-all">
+			<?php echo $this->translate('header-confirm-delete');?>
+		</h3>
+		<img src="<?php echo $this->baseUrl(). "/images/alert.png";?>">
+		
+		<div id="container-msg">
+			<p>
+			<?php echo $this->translate('com-confirm-delete-msg');?>
+
+		 <!--	'<?php echo $this->communique;?>'?  communique id -->
+			
+		<!--	(<?php echo $this->translate('com-note-delete') ?>)  note -->
+			</p>
+			<input type="hidden" name="id" value="<?php echo $this->escape($r['com_id']);?>"/>
+			<input type="submit" name="del" value="<?php echo $this->translate('yes');?>"/>
+			<input type="submit" name="del" value="<?php echo $this->translate('no'); ?>"/>
+		</div>
+	</div>
+</div>
+</form>
+<?php endforeach;?>

@@ -1,0 +1,13 @@
+<script type="text/javascript">
+	$(function() {
+		$( "input:submit", "#button" ).button()
+	});
+</script>
+
+<script type="text/javascript" src="/js/ajaxValidateForm.js"></script>
+
+<?php echo $this->headTitle($this->title);?>
+<h2><?php echo $this->translate('header-enter-new');?></h2>
+<div id="button">
+	<?php echo $this->form; ?>
+</div>

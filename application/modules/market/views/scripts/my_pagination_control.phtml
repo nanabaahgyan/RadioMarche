@@ -1,0 +1,52 @@
+<script type="text/javascript">
+	// buttons
+	$(function() {
+		$( "a,span", ".paginationControl" ).button();
+	});
+</script>
+
+<?php
+/*
+ * Item pagination example
+ * See http://developer.yahoo.com/ypatterns/pattern.php?pattern=itempagination
+ */
+?>
+<?php if ($this->pageCount): ?>
+<div class="paginationControl">
+<?php echo $this->firstItemNumber; ?> - <?php echo $this->lastItemNumber; ?> of 
+<?php echo $this->totalItemCount; ?>
+
+<!-- First page link -->
+<?php if (isset($this->previous)): ?>
+  <a href="<?php echo $this->url(array('page' => $this->first)); ?>">
+	<?php echo $this->translate('label-first');?></a> |
+<?php else: ?>
+  <span class="disabled"><?php echo $this->translate('label-first');?></span> |
+<?php endif; ?>
+
+<!-- Previous page link -->
+<?php if (isset($this->previous)): ?>
+  <a href="<?php echo $this->url(array('page' => $this->previous)); ?>"> &lt; 
+  	<?php echo $this->translate('label-previous');?>  </a> |
+<?php else: ?>
+  <span class="disabled">&lt; <?php echo $this->translate('label-previous');?></span> |
+<?php endif; ?>
+
+<!-- Next page link -->
+<?php if (isset($this->next)): ?>
+  <a href="<?php echo $this->url(array('page' => $this->next)); ?>">  
+	<?php echo $this->translate('label-next');?> &gt; </a> |
+<?php else: ?>
+  <span class="disabled"><?php echo $this->translate('label-next');?> &gt;</span> |
+<?php endif; ?>
+
+<!-- Last page link -->
+<?php if (isset($this->next)): ?>
+  <a href="<?php echo $this->url(array('page' => $this->last)); ?>">  
+  	<?php echo $this->translate('label-last');?>  
+  </a>
+<?php else: ?>
+  <span class="disabled"><?php echo $this->translate('label-last');?></span>
+<?php endif; ?>
+</div>
+<?php endif;?>

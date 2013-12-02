@@ -1,0 +1,7 @@
+*****************STEPS FOR SYNCHING VOICE PLATFORMS***************************
+******************************************************************************
+1. Set maintenance to false
+2. Log in as admin and create a synchronize file
+3. Create missing audio(s) on new platform
+4. Update voice platform URL appropriately
+5. Update uploads table to new URL value (using text editor at the moment)

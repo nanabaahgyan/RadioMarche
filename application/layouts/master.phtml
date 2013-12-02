@@ -1,0 +1,106 @@
+<?php echo $this->doctype(); ?>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<?php echo $this->headTitle(); ?>
+		<?php echo $this->headMeta();?>
+		<?php echo $this->headLink()->appendStylesheet($this->baseUrl().'/css/master.css', 'screen')
+									->appendStylesheet($this->baseUrl().'/css/print.css', 'print');
+		?>
+		<?php echo $this->jQuery();?>
+	</head>
+	
+	<script type="text/javascript">
+		$(function() {
+			$("a#menu-button", "#menu").button();
+			$("a#menu-button").css({ width: '87px', 'padding-top': '2px', 'padding-bottom': '2px' });
+		});
+	</script>
+	
+	<body>
+		<div id="header">
+			<div id="screen-logo">
+				<img src="<?php echo $this->baseUrl(). "/images/logo.png";?>"/></img>
+			</div>
+			<div id="print-logo">
+				<img src="<?php echo $this->baseUrl(). "/images/logo.png";?>"/></img>
+			</div>
+			
+			<!-- menus -->
+			<div id="menu">
+				<!-- locale -->
+				<div id="locale">
+					<a id="lang" href="<?php echo $this->url(array('module' => 'default',
+													 'controller' => 'locale',
+													 'action' => 'index',
+													 'locale' => 'en_GB' ),
+													 'default', true); ?>">
+					<img src="<?php echo $this->baseUrl()."/images/locale/en_gb.gif"?>" id="en"></img></a>
+					<a id="lang" href="<?php echo $this->url(array('module' => 'default',
+													 'controller' => 'locale',
+													 'action' => 'index',
+													 'locale' => 'fr_FR' ),
+													 'default', true); ?>">
+					<img src="<?php echo $this->baseUrl()."/images/locale/fr_fr.gif"?>" id="fr"></img></a>
+				</div>
+			
+				<!-- user identity -->
+				<div id="identity">
+				<?php $identity = Zend_Auth::getInstance()->getIdentity();
+					  if (isset($identity) && !empty($identity)){
+					  	  echo $this->translate('header-welcome') . ucfirst($this->identity->username);
+					  }
+				?>
+				</div>
+			<?php
+		   	  	$identity = Zend_Auth::getInstance()->getIdentity();
+		   	  	
+				if (isset($identity) && !empty($identity) && $identity->user_type == 'ngo') : ?>
+  				<a id="menu-button" href="<?php echo $this->url(array(),'logout'); ?>"><?php echo $this->translate('menu-logout');?></a>
+  		   		<a id="menu-button" href="<?php echo $this->url(array(
+											//	'module' => 'market',
+												'controller' => 'market-info',
+												'action' => 'search'),'default', true);
+  												?>"><?php echo $this->translate('menu-search');?></a>
+  	<!--    	<a href="<?php echo $this->url(array(), 'communique-store'); ?>">COM STORE</a>
+  				<a href="<?php echo $this->url(array(), 'enter-new-offering-info'); ?>">
+  					<?php echo $this->translate('menu-enter-new');?></a> -->
+
+  				<a id="menu-button" href="<?php echo $this->url(array(), 'ngo'); ?>"><?php echo $this->translate('menu-home');?></a>
+  				
+			<?php elseif (isset($identity) && !empty($identity) && $identity->user_type == 'rad'):?>
+				<a href="<?php echo $this->url(array(), 'logout'); ?>"><?php echo $this->translate('menu-logout');?></a>
+				<a href="<?php echo $this->url(array(), 'radio')?>"><?php echo $this->translate('menu-home');?></a>
+			<?php else: ?>
+				<a id="menu-button" href="<?php echo $this->url(array(), 'about-us');?>"><?php echo $this->translate('menu-about-us'); ?></a>
+				<a id="menu-button" href="<?php echo $this->url(array(), 'register');?>"><?php echo $this->translate('menu-register'); ?></a>
+				<a id="menu-button" href="<?php echo $this->url(array(), 'login');?>"><?php echo $this->translate('menu-login'); ?></a>
+				<a id="menu-button" href="<?php echo $this->url(array(
+															'module' => 'default',
+															'controller' => 'index',
+															'action' => 'index'),'default', 'home'); ?>">
+				<?php echo $this->translate('menu-home'); ?></a>
+			<?php endif;?>
+			</div>
+		</div>
+
+		<!-- output flash message -->
+		<?php echo $this->partial('priorityMessages.phtml',
+				   					array('priorityMessages'=>$this->priorityMessenger()));
+		?>
+				
+		<div id="content">
+			<?php echo $this->layout()->content;?>
+		</div>
+		
+		<div id="footer">
+			<?php echo $this->translate('copyright');?>&nbsp;
+			<a href="http://www.mvoices.eu" target="_blank">EU VOICES Project</a>&nbsp;&copy;
+			<?php echo date('Y');?>&nbsp;
+			<?php if (isset($identity)):?>
+				<a id="mail" href="mailto:radiomarche@mvoices.eu?Subject=Feedback%20on%20Radiomarche">
+					<?php echo $this->translate('send-report');?>
+				</a>
+			<?php endif;?>
+		</div>
+	</body>
+</html>

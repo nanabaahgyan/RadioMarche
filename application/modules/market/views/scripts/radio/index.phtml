@@ -1,0 +1,54 @@
+&nbsp;
+<?php echo $this->headTitle($this->translate('title-radio-home'));?>
+
+<?php if (count($this->records)): ?>
+<!--
+<div id="intro">
+	<?php echo $this->translate('rad-newly-avail-mkinfo'); ?>
+</div>
+-->
+<div id="records">
+	<table>
+  		<tr>
+  			<td colspan="6"><?php echo $this->translate('newly-created-coms');?></td>
+  		</tr>
+  		<tr>
+  		<th colspan="2">ID</th>
+    		<th><?php echo $this->translate('table-date-created');?></th>
+    	<!--<th>Language</th>   -->
+    		<th colspan="3"><?php echo $this->translate('table-audio');?></th>
+  		</tr>
+  		<?php $counter = 1;?>
+  		<?php foreach ($this->records as $r): ?>
+  		<tr>
+  			<td><input type="hidden" name="audio_id" value="<?php echo $this->escape($r['upload_id']); ?>"/></td>
+  			<td><?php echo $counter++; ?></td>
+  		<!--<td><?php echo $this->escape($r['upload_id']);?></td> -->
+    		<td><?php echo $this->escape($r['ts_date_submitted']); ?></td>
+            <td><a href="<?php echo $this->escape($r['content']);?>" target="_blank">
+            		<?php echo $this->translate('form-preview-communique');?>
+            	</a>
+           <td><a href="<?php echo $this->url(array(
+            									'module'=>'market',
+			    								'controller'=>'radio',
+			    								'action'=>'save-audio',
+           										'id' => $this->escape($r['upload_id'])),
+			    								'default', true
+            									);?>"><?php echo $this->translate('save');?></a>
+           </td>
+           <td><a href="<?php echo $this->url(array(
+            									'module'=>'market',
+			    								'controller'=>'market-info',
+			    								'action'=>'print',
+           										'id' => $this->escape($r['upload_id'])),
+			    								'default', true
+            									);?>"><?php echo $this->translate('print');?></a>
+           </td>
+  		</tr>
+  		<?php endforeach;?>
+	</table>
+</div>
+
+<?php else: ?>
+	<?php echo $this->translate('no-new-mkinfo');?>
+<?php endif; ?>

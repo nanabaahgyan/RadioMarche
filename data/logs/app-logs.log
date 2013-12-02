@@ -1,0 +1,198 @@
+2011-10-04T15:21:32+02:00: ERR: <pre>array(3) {
+  ["controller"] => string(3) "ngo"
+  ["action"] => string(10) "communique"
+  ["module"] => string(7) "default"
+}
+</pre>: %host%: Invalid controller specified (ngo)
+2011-10-04T15:24:14+02:00: ERR: <pre>array(3) {
+  ["controller"] => string(3) "ngo"
+  ["action"] => string(10) "communique"
+  ["module"] => string(7) "default"
+}
+</pre>: %host%: Invalid controller specified (ngo)
+2011-10-04T15:32:12+02:00: ERR: <pre>array(3) {
+  ["controller"] => string(3) "ngo"
+  ["action"] => string(10) "communique"
+  ["module"] => string(7) "default"
+}
+</pre>: %host%: Invalid controller specified (ngo)
+2011-10-04T15:36:41+02:00: NOTICE: <pre>array(3) {
+  ["controller"] => string(3) "ngo"
+  ["action"] => string(10) "communique"
+  ["module"] => string(7) "default"
+}
+</pre>: %host%: Invalid controller specified (ngo)
+2011-10-04T21:20:35+02:00: NOTICE: <pre>array(3) {
+  ["controller"] => string(7) "communi"
+  ["action"] => string(5) "index"
+  ["module"] => string(7) "default"
+}
+</pre>: %host%: Invalid controller specified (communi)
+2011-10-04T21:26:18+02:00: NOTICE: <pre>array(3) {
+  ["controller"] => string(7) "communi"
+  ["action"] => string(5) "index"
+  ["module"] => string(7) "default"
+}
+</pre>: %host%: Invalid controller specified (communi)
+2011-10-04T21:30:37+02:00: NOTICE: <pre>array(3) {
+  ["controller"] => string(3) "ngo"
+  ["action"] => string(4) "comy"
+  ["module"] => string(7) "default"
+}
+</pre>: %host%: Invalid controller specified (ngo)
+2011-10-04T21:38:20+02:00: NOTICE: <pre>array(3) {
+  ["controller"] => string(3) "ngo"
+  ["action"] => string(4) "comy"
+  ["module"] => string(7) "default"
+}
+</pre>: %host%: Invalid controller specified (ngo)
+2011-10-04T21:40:33+02:00: NOTICE: <pre>array(3) {
+  ["controller"] => string(3) "ngo"
+  ["action"] => string(4) "comy"
+  ["module"] => string(7) "default"
+}
+</pre>: %host%: Invalid controller specified (ngo)
+2011-10-04T22:07:31+02:00: NOTICE: <pre>array(3) {
+  ["controller"] => string(3) "ngo"
+  ["action"] => string(2) "ko"
+  ["module"] => string(7) "default"
+}
+</pre>: %host%: Invalid controller specified (ngo)
+2011-10-04T22:20:16+02:00: CRIT: <pre>array(5) {
+  ["module"] => string(6) "market"
+  ["controller"] => string(3) "ngo"
+  ["action"] => string(21) "create-new-communique"
+  ["prod_ids"] => array(2) {
+    [0] => string(1) "6"
+    [1] => string(1) "7"
+  }
+  ["submit"] => string(18) "Create Communiqué"
+}
+</pre>: %host%: Unknown relation alias Voices_Model_Contact
+2011-10-04T22:26:11+02:00: CRIT: <pre>array(5) {
+  ["module"] => string(6) "market"
+  ["controller"] => string(3) "ngo"
+  ["action"] => string(21) "create-new-communique"
+  ["prod_ids"] => array(2) {
+    [0] => string(1) "6"
+    [1] => string(1) "7"
+  }
+  ["submit"] => string(18) "Create Communiqué"
+}
+</pre>: %host%: Unknown relation alias Voices_Model_Contact
+2011-10-04T22:27:54+02:00: CRIT: <pre>array(5) {
+  ["module"] => string(6) "market"
+  ["controller"] => string(3) "ngo"
+  ["action"] => string(21) "create-new-communique"
+  ["prod_ids"] => array(2) {
+    [0] => string(1) "6"
+    [1] => string(1) "7"
+  }
+  ["submit"] => string(18) "Create Communiqué"
+}
+</pre>: %host%: Unknown relation alias Voices_Model_Contact
+2011-10-04T22:30:25+02:00: CRIT: <pre>array(5) {
+  ["module"] => string(6) "market"
+  ["controller"] => string(3) "ngo"
+  ["action"] => string(21) "create-new-communique"
+  ["prod_ids"] => array(2) {
+    [0] => string(1) "6"
+    [1] => string(1) "7"
+  }
+  ["submit"] => string(18) "Create Communiqué"
+}
+</pre>: %host%: Unknown relation alias Voices_Model_Contact
+2011-10-04T22:30:34+02:00: CRIT: <pre>array(5) {
+  ["module"] => string(6) "market"
+  ["controller"] => string(3) "ngo"
+  ["action"] => string(21) "create-new-communique"
+  ["prod_ids"] => array(2) {
+    [0] => string(1) "6"
+    [1] => string(1) "7"
+  }
+  ["submit"] => string(18) "Create Communiqué"
+}
+</pre>: %host%: Unknown relation alias Voices_Model_Contact
+2011-10-04T22:33:29+02:00: CRIT: <pre>array(5) {
+  ["module"] => string(6) "market"
+  ["controller"] => string(3) "ngo"
+  ["action"] => string(21) "create-new-communique"
+  ["prod_ids"] => array(2) {
+    [0] => string(1) "6"
+    [1] => string(1) "7"
+  }
+  ["submit"] => string(18) "Create Communiqué"
+}
+</pre>: %host%: Unknown relation alias Voices_Model_Contact
+2011-10-04T22:36:47+02:00: CRIT: <pre>array(5) {
+  ["module"] => string(6) "market"
+  ["controller"] => string(3) "ngo"
+  ["action"] => string(21) "create-new-communique"
+  ["prod_ids"] => array(2) {
+    [0] => string(1) "6"
+    [1] => string(1) "7"
+  }
+  ["submit"] => string(18) "Create Communiqué"
+}
+</pre>: %host%: Unknown relation alias Voices_Model_Contact
+2011-10-04T22:39:12+02:00: CRIT: <pre>array(5) {
+  ["module"] => string(6) "market"
+  ["controller"] => string(3) "ngo"
+  ["action"] => string(21) "create-new-communique"
+  ["prod_ids"] => array(2) {
+    [0] => string(1) "6"
+    [1] => string(1) "7"
+  }
+  ["submit"] => string(18) "Create Communiqué"
+}
+</pre>: %host%: Unknown relation alias Voices_Model_Contact
+2011-10-04T22:40:08+02:00: CRIT: <pre>array(5) {
+  ["module"] => string(6) "market"
+  ["controller"] => string(3) "ngo"
+  ["action"] => string(21) "create-new-communique"
+  ["prod_ids"] => array(2) {
+    [0] => string(1) "6"
+    [1] => string(1) "7"
+  }
+  ["submit"] => string(18) "Create Communiqué"
+}
+</pre>: %host%: Unknown relation alias Voices_Model_Contact
+2011-10-04T22:50:20+02:00: CRIT: <pre>array(5) {
+  ["module"] => string(6) "market"
+  ["controller"] => string(3) "ngo"
+  ["action"] => string(21) "create-new-communique"
+  ["prod_ids"] => array(2) {
+    [0] => string(1) "6"
+    [1] => string(1) "7"
+  }
+  ["submit"] => string(18) "Create Communiqué"
+}
+</pre>: %host%: Unknown relation alias Voices_Model_Contact
+2011-10-08T11:49:12+02:00: ALERT: Language id is not valid: bq: %host%: Audio Generator Error
+2011-10-08T11:54:11+02:00: CRIT: Error Message:Language id is not valid: br: %host%: Audio Generator Error
+2011-10-12T10:40:04+02:00: NOTICE: <pre>array(14) {
+  ["controller"] => string(6) "voices"
+  ["action"] => string(11) "application"
+  ["modules"] => string(7) "account"
+  ["views"] => string(7) "scripts"
+  ["account"] => string(13) "success.phtml"
+  ["module"] => string(7) "default"
+  ["start_debug"] => string(1) "1"
+  ["debug_host"] => string(9) "127.0.0.1"
+  ["send_sess_end"] => string(1) "1"
+  ["debug_session_id"] => string(4) "1000"
+  ["original_url"] => string(84) "http://voices/voices/application/modules/account/views/scripts/account/success.phtml"
+  ["debug_start_session"] => string(1) "1"
+  ["debug_no_cache"] => string(13) "1318408789558"
+  ["debug_port"] => string(5) "10000"
+}
+</pre>: %host%: Invalid controller specified (voices)
+2011-10-13T21:59:41+02:00: CRIT: <pre>array(6) {
+  ["module"] => string(6) "market"
+  ["controller"] => string(3) "ngo"
+  ["action"] => string(8) "feedback"
+  ["feedback_type"] => string(0) ""
+  ["address"] => string(0) ""
+  ["submit"] => string(19) "Submit New Feedback"
+}
+</pre>: %host%: Unknown record property / related component "type" on "Voices_Model_Feedback"

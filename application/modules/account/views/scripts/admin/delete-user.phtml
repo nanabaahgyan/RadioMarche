@@ -1,0 +1,15 @@
+<?php echo $this->headTitle('Remove New User');?>
+<?php foreach ($this->results as $r): ?>
+
+<form action="<?php echo $this->url(array('controller' => 'admin',
+										  'action' => 'delete-user'));?>"
+      method="post">
+
+<p>Do you really want to remove <?php echo ucfirst($this->escape($r['profile_value']));?> from the system? </p>
+<div>
+	<input type="hidden" name="id" value="<?php echo $this->escape($r['user_id']);?>"/>
+	<input type="submit" name="del" value="Yes"/>
+	<input type="submit" name="del" value="No"/>
+</div>
+</form>
+<?php endforeach;?>

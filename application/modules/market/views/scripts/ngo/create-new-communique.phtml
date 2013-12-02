@@ -1,0 +1,221 @@
+<script type="text/javascript">
+	$(function() {// jquery buttons
+		$( "a, input:submit,button", ".button" ).button();
+	});
+	$(function() {// jquery accordion
+		$( "#accordion" ).accordion({
+			autoHeight: false,
+			navigation: true
+		});
+	});
+</script>
+
+<!-- ajax form validate -->
+<script type="text/javascript" src="/js/ajaxValidateForm.js"></script>
+
+<!-- ajax form data submit -->
+<!--  <script type="text/javascript" src="/js/ajaxSubmit.js"></script>  -->
+
+<?php echo $this->headTitle($this->translate('title-ngo-home'));?>
+
+<div id="accordion"><!-- container -->
+	<h3><a href="#"><?php echo $this->translate('newly-avail-mkinfo');?></a></h3>
+	<div>
+<?php if (count($this->records)): ?><!-- available product information? -->
+  	<form action="/ngo/create-new-communique" method="post" class="button">
+	<table>
+		<tr>
+			<th colspan="2">No.</th>
+			<th><?php echo $this->translate('table-product-name');?></th>
+			<th><?php echo $this->translate('table-quantity');?></th>
+			<th><?php echo $this->translate('table-price');?></th>
+			<th><?php echo $this->translate('table-contact-name');?></th>
+	     	<th class="key"><?php echo $this->translate('table-date-submitted');?></th>
+		</tr>
+		<?php $counter = 1;?>
+		<?php foreach ($this->records as $r): ?>
+		<tr>
+			<td>
+				<input type="checkbox" name="prod_ids[]" value="<?php echo $this->escape($r['prod_id']); ?>"/>
+			</td>
+			<td><?php echo $counter++;?></td>
+			
+			<td class="even"><?php echo ucfirst($this->escape($r['prod_name'])); ?></td>
+			<td><?php echo $this->escape($r['quantity']) . ' '  ?>
+				<i><?php echo ucfirst($this->escape($r['unit_measure'])); ?></i>
+			</td>
+			<td class="even">
+				<?php echo  $this->escape($r['currency']) . ' ' . $this->escape($r['price']);  ?>
+			</td>
+			<td><?php echo ucfirst($this->escape($r['Voices_Model_Contacts']['first_name'])) . ' ' .
+			               ucfirst($this->escape($r['Voices_Model_Contacts']['last_name'])); ?>
+			</td>
+			<td class="even">
+				<?php echo $this->escape(date('D, M j Y', strtotime($this->escape($r['ts_date_entered']))));?>
+			</td>
+            <td><a href="<?php echo $this->url(array(
+            									'module'=>'market',
+			    								'controller'=>'ngo',
+			    								'action'=>'edit-communique-info',
+			    								'id'=>$this->escape($r['prod_id'])),
+			    								'default', true
+            									);?>">
+            		<?php echo $this->translate('label-edit');?>
+            	</a>
+            </td>
+    		<td><a href="<?php echo $this->url(array(
+            									'module' => 'market',
+    											'controller'=>'ngo',
+    											'action'=>'delete-communique-info',
+    											'id'=>$this->escape($r['prod_id'])),
+    											'default', true
+    											);
+    											?>">
+    				<?php echo $this->translate('label-delete');?>
+    		    </a>
+    		</td>
+		</tr>
+		<?php endforeach; ?>
+	</table>
+	
+	<label for="com-number"><?php echo $this->translate('form-com-number');?></label>
+	<input type="text" name="com_number" size="2"/>
+	<input type="submit" value="<?php echo $this->translate('form-create-communique'); ?>"/>
+	</form>
+<?php else: ?>
+	<div class="button">
+		<?php echo $this->translate('no-new-mkinfo');?><!-- so add link to enter new -->
+		<a href="<?php echo $this->url(array(), 'enter-new-offering-info'); ?>">
+			<?php echo $this->translate('label-new-prod') .'?';?>
+		</a>
+	</div>
+<?php endif; ?>
+</div>
+
+<!-- for accordion container -->
+<!-- form for a new product
+	<h3><a href="#"><?php echo $this->translate('label-new-prod');?></a></h3>
+	<div class="button">
+		<?php echo $this->form;?>
+	</div>
+-->
+<!-- is it a new communique available? -->
+<?php if (count($this->com)): ?>
+	<h3><a href="#"><?php echo $this->translate('label-newly-created-coms');?></a></h3><!-- for accordion container-->
+	<div>
+	<table class="button">
+  		<tr>
+    		<th colspan="1"><?php echo $this->translate('table-date-created');?></th>
+    		<th>Com No.</th>
+    		<th><?php echo $this->translate('table-status');?></th>
+<!--     		<th><?php echo $this->translate('table-language');?>
+    		<th><?php echo $this->translate('table-radio-station');?></th>   -->
+    		<th colspan="5"><?php echo $this->translate('table-audio');?></th>
+  		</tr>
+  		<?php $count = 1;?>
+  		<?php foreach ($this->com as $c): ?>
+  		<tr id="<?php if (($count % 2) == 0): echo 'even'; else: echo 'odd'; endif; $count++;?>">
+  		<!-- 	<td>
+  				<input type="hidden" name="audio_id" value="<?php echo $this->escape($c['upload_id']);?>"/>
+  			</td>   -->
+    		<td>
+    			<?php echo date('D, M j Y G:i', strtotime($this->escape($c['ts_date_submitted'])));?>
+    		</td>
+            <td align="center"><?php echo $this->escape($c['com_number']);?></td>
+            <td><?php echo $this->translate('table-status-unpub');?></td>
+            
+            <td>
+            	<span id="listen-audio">
+            		<a href="<?php echo $this->escape($c['content']);?>" target="_blank">
+            			<?php echo $this->translate('ORTM French');?>
+            		</a>
+            	</span>
+  				 				
+  				<?php $bamUrl = str_replace("_1_fr", "_1_bam", $this->escape($c['content']));?>
+  				<span id="listen-audio">
+  					<a href="<?php echo $bamUrl; ?>" target="_blank">
+  						<?php echo $this->translate('ORTM Bamb');?>
+  					</a>
+  				</span>
+  				
+  				<?php $ortmBomuUrl = str_replace("_1_fr", "_1_bomu", $this->escape($c['content']));?>
+  				<span id="listen-audio">
+  					<a href="<?php echo $ortmBomuUrl; ?>" target="_blank">
+  						<?php echo $this->translate('ORTM Bomu');?>
+  					</a>
+  				</span>
+  				
+  				<?php
+  					$moutianFr = str_replace("_1_", "_2_", $this->escape($c['content']));
+  				?>
+  				<span id="listen-audio">
+  					<a href="<?php echo $moutianFr; ?>" target="_blank">
+  						<?php echo $this->translate('Moutian Fr');?>
+  					</a>
+  				</span>
+  				
+  				<?php
+  					$moutianBam = str_replace("_1_fr", "_2_bam", $this->escape($c['content']));
+  				?>
+  				<span id="listen-audio">
+  					<a href="<?php echo $moutianBam; ?>" target="_blank">
+  						<?php echo $this->translate('Moutian Bamb');?>
+  					</a>
+  				</span>
+  				
+  				<?php
+  					$moutianBomu = str_replace("_1_fr", "_2_bomu", $this->escape($c['content']));
+  				?>
+  				<span id="listen-audio">
+  					<a href="<?php echo $moutianBomu; ?>" target="_blank">
+  						<?php echo $this->translate('Moutian Bomu');?>
+  					</a>
+  				</span>
+            </td>
+           <td><a href="<?php echo $this->url(array(
+           										'module' => 'market',
+           										'controller' => 'ngo',
+           										'action' => 'excel-preview',
+           										'id' => $this->escape($c['upload_id'])),
+           										'default', true
+           										);?>">
+           			<?php echo $this->translate('label-excel-preview');?>
+           		</a>
+           	</td>
+           	<td>
+           		<a href="<?php echo $this->url(array(
+           										'module'=>'market',
+           									  	'controller'=>'ngo',
+           										'action'=>'show-communique-content',
+           										'id'=>$this->escape($c['upload_id'])),
+           										'default', true
+           									  );?>">
+					<?php echo $this->translate('label-com-content');?>
+				</a>
+           	</td>
+           	<td><a href="<?php echo $this->url(array(
+            									'module'=>'market',
+			    								'controller'=>'ngo',
+			    								'action'=>'delete-communique',
+			    								'com-id'=>$this->escape($c['com_id'])),
+			    								'default', true
+            									);?>">
+    				<?php echo $this->translate('label-delete');?>
+    			</a>
+           </td>
+           <td><a id="publish" href="<?php echo $this->url(array(
+            									'module'=>'market',
+			    								'controller'=>'ngo',
+			    								'action'=>'create-product-offering',
+           										'com-id'=>$this->escape($c['com_id'])),
+			    								'default', true
+            									);?>"><?php
+  													echo $this->translate('com-publish');
+            									?></a>
+           	</td>
+  		</tr>
+  		<?php endforeach;?>
+	</table>
+	</div>
+</div>
+<?php endif;?>

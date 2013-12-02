@@ -1,0 +1,262 @@
+<?php echo $this->headTitle($this->translate('header-com-store'));?>
+<!--  <h2><?php echo $this->translate('header-com-store');?></h2>  -->
+<!-- Online Communique -->
+<div id="accordion"><!-- jquery accordion widget placeholder -->
+	<h3><a href="#"><?php echo $this->translate('label-com-online');?></a></h3>
+	<div>
+	<?php if (count($this->comOnline)):?>	
+     	<table class="button">            		
+     		<tr>
+     			<th><?php echo $this->translate('table-status');?></th>
+     			<th><?php echo $this->translate('table-radio-station');?></th>
+     			<th colspan="3"><?php echo $this->translate('table-communique');?>
+     		</tr>
+     		<?php foreach ($this->comOnline as $key=>$value):?>
+     		<tr>
+     			<td>Published and Online</td>
+     			<td><span id="radio-sta-text-up">Radio ORTM Segou</span>
+  					<span id="radio-sta-text-down">Radio Moutian</span>
+     			</td>
+     			<td><a href="<?php echo $this->escape($value['content']);?>" target="_blank">
+  						<?php echo $this->translate('label-listen');?>
+  					</a><br></br>
+  					<?php 
+  						$secondUrl = str_replace("_1_", "_2_", $this->escape($value['content']));
+  					?>
+  					<a href="<?php echo $secondUrl; ?>" target="_blank">
+  						<?php echo $this->translate('label-listen');?>
+  					</a>
+     			</td>
+     			<td>
+     				<a href="<?php echo $this->url(array(
+            								'module'=>'market',
+			    							'controller'=>'market-info',
+			    							'action'=>'print',
+			    							'com-id'=>$this->escape($value['com_id'])),
+			    							'default', true
+            								);?>">
+  			  		<?php echo $this->translate('preview');?>
+  			 		</a>
+     			</td>
+     			<td>
+     				<button>
+						<?php echo $this->translate('label-com-content');?>
+					</button>
+				</td>
+				
+     		</tr>
+     		<?php endforeach;?>
+		</table>
+		
+	<?php else:?>
+		<?php echo $this->translate('no-com-online');?>
+	<?php endif;?>	
+	</div>
+	<!-- previous communique -->
+	<h3><a href="#"><?php echo $this->translate('label-old-com')?></a></h3>
+	<?php if (count($this->com)): ?>  
+	<div>
+	<table class="button">
+  	<tr>
+  	 	<th colspan="1">&nbsp;</th>  
+    	<th><?php echo $this->translate('table-language');?></th>
+    	<th>Com No.</th>
+    	<th><?php echo $this->translate('table-status')?></th>
+    	<th><?php echo $this->translate('table-radio-station');?></th>
+    	<th colspan="3"><?php echo $this->translate('table-communique');?></th>
+  	</tr>
+  	<?php $counter = 1;?>
+  	<?php foreach ($this->com as $key => $value):?>
+  	<tr id="<?php if (($counter % 2) == 0): echo 'even'; else: echo 'odd'; endif;?>">
+ <!--   <td><input type="hidden" name="upload_id" value="<?php echo $this->escape($value['upload_id']); ?>"/></td>  -->   	
+    	<td><?php echo $counter++;?></td>
+  		<td><?php
+  				if ($this->escape($value['lang_code'] == 'fr'))
+  					echo $this->translate('lang-french');
+  			?>
+  		</td>
+  		<td><?php echo $this->escape($value['com_number']);?></td>
+  		<td><?php echo $this->translate('table-status-pub')?></td>
+  		<td><span id="radio-sta-text-up">Radio ORTM Segou</span>
+  			<span id="radio-sta-text-down">Radio Moutian</span>
+  		</td>
+  		
+  		<td><a href="<?php echo $this->escape($value['content']);?>" target="_blank">
+  				<?php echo $this->translate('label-listen');?>
+  			</a><br></br>
+  			<?php 
+  				$secondUrl = str_replace("_1_", "_2_", $this->escape($value['content']));
+  			?>
+  			<a href="<?php echo $secondUrl; ?>" target="_blank">
+  				<?php echo $this->translate('label-listen');?>
+  			</a>
+  		</td>
+  		
+  		<td><a href="<?php echo $this->url(array(
+            								'module'=>'market',
+			    							'controller'=>'market-info',
+			    							'action'=>'print',
+			    							'com-id'=>$this->escape($value['com_id'])),
+			    							'default', true
+            								);?>">
+  			  <?php echo $this->translate('preview');?>
+  			 </a>
+  		</td>
+  		<td><button id="opener">
+				<?php echo $this->translate('label-com-content');?>
+			</button>
+		</td>
+  	</tr>
+  	<?php endforeach;?>
+	</table>
+	
+	<?php else:?>
+          ?<?php echo $this->translate('empty-com-store');?>
+	<?php endif;?>
+	</div>
+</div>  
+
+
+<?php
+/*
+* Search pagination
+*/
+?>
+<?php if ($this->pageCount): ?>
+<div class="paginationControl">
+<!-- Previous page link -->
+<?php if (isset($this->previous)): ?>
+<a href="<?php echo $this->url(array('page' => $this->previous)); ?>"> << Previous</a> | 
+<?php else: ?>
+<span class="disabled">&lt; Previous</span> |
+<?php endif; ?>
+<!-- Numbered page links -->
+<?php foreach ($this->pagesInRange as $page): ?>
+<?php if ($page != $this->current): ?>
+    <a href="<?php echo $this->url(array('page' => $page)); ?>">
+        <?php echo $page; ?>
+    </a> |
+  <?php else: ?>
+    <?php echo $page; ?> |
+  <?php endif; ?>
+<?php endforeach; ?>
+<!-- Next page link -->
+<?php if (isset($this->next)): ?>
+  <a href="<?php echo $this->url(array('page' => $this->next)); ?>">
+    Next &gt;
+  </a>
+<?php else: ?>
+  <span class="disabled">Next &gt;</span>
+<?php endif; ?>
+</div>
+<?php endif; ?>
+
+/**** CHECKLIST FOR NEW CHECKOUT ****/
+configs
+		/application.ini
+		/routes.ini
+
+layouts
+		/admin.phtml
+		/master.phml
+	+	/priorityMessages.phtml
+		
+modules
+		/account
+				/controllers
+							/AccountController
+				/views
+					 /scripts
+					 		/account
+					 				/login.phtml
+		/default
+				/controllers
+						+	/AsyncController.php
+							/ErrorController.php
+							/IndexController.php
+				/views
+					/scripts
+							/index
+							+	/maintenance.phtml
+		/market
+			   /controllers
+			   			/NgoController.php
+			   /views
+			   		/scripts
+			   				/market-info
+			   							/search.phtml
+			   				/ngo
+			   					*
+			   				+ 	my_pagination_control.phtml
+		Bootstap.php
+data
+	/templates
+			/email
+			  +	 /system-crit-email.phtml
+laguages
+	/en
+		*
+/library
+		/Voices
+			  /Form
+			  		/Login.php
+			  		/NewMarketInfo.php
+			  /Model
+			  		/Data
+			  			/Aggregator
+			  		/DatabaseObject
+			  					/User
+			+ ZendX
+					/*
+/public
+	/css
+		/jquery
+			*
+		/master.css
+	/images
+		/*
+	/js
+		/*
+		
+update uploads set content = 
+replace(content, ‘find this string’, ‘replace found string with this string’);
+
+http://radiomarche.est-a-la-maison.com/radiomali
+http://projects.emerginov.org/V_radio_auth/audio/generated/4ef066fd51ef2_1_fr.wav
+
+		
+<!-- 		<div class="info">
+ 		<?php if( isset($this->flashMessages) && !empty($this->flashMessages) ): ?>
+    		<ul id="messages">
+        	<?php foreach( $this->flashMessages as $message ):?>
+            	<li>
+            <?php echo $message;?>
+            	</li>
+        	<?php endforeach; ?>
+    		</ul>
+		<?php endif; ?>  -->
+<!--  		</div>  -->
+
+
+	/*		// where the file is located
+						$path = APPLICATION_PATH . '/../public/';
+						$jsonFile = APPLICATION_PATH . '/../public/comJson.txt';
+								
+						// actually create file
+						if (!file_exists($jsonFile)){
+							@chmod($path, 777);
+						}
+									
+						// attempt to open file in append mode
+				$fh = fopen($jsonFile, 'ab') or die('Cannot open file'); */
+				
+						//		$timestamp = '************************************************************' . PHP_EOL;
+						//		$timestamp .= '************************************************************' . PHP_EOL;
+				/*		fwrite($fh, $timestamp);
+				
+				foreach ($prodComArrayJson as $jsonString){
+					fwrite($fh, $jsonString . PHP_EOL);
+				}
+		*/
+				// close file handle
+		//		fclose($fh);

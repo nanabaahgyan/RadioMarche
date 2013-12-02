@@ -1,0 +1,53 @@
+<?php echo $this->headTitle($this->title);?>
+
+<script type="text/javascript">
+$(function() {// jquery accordion
+	$( "#accordion" ).accordion({
+		autoHeight: true,
+		navigation: false
+	});
+});
+</script>
+	
+<div id="accordion"><!-- container -->
+	<h3><a href="#"><?php echo $this->translate('header-com-content');?></a></h3>
+	<div>
+		<table>
+		<thead>
+			<tr>
+				<th>&nbsp;</th>
+				<th>
+					<?php echo $this->translate('table-product-name');?>
+				</th>
+				<th>
+	 				<?php echo $this->translate('table-contact');?>
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+		<?php $counter = 1;?>
+		<?php foreach ($this->prodInfo as $fkey=>$value):?>
+			<?php foreach ($value as $sKey=>$product):?>
+			<tr id="<?php if (($counter % 2) == 0): echo 'even'; else: echo 'odd'; endif;?>">
+				<td><?php echo $counter; ?></td>
+				<td><?php echo ucfirst($product['prod_name']).', '.
+						       $product['quantity'] .
+						       ucfirst($product['unit_measure']). ', ' .
+						       $product['price'] . $product['currency'];
+					?>
+				</td>
+				<td><?php echo ucfirst($product['Voices_Model_Contacts']['first_name']). ' ' .
+						   	   ucfirst($product['Voices_Model_Contacts']['last_name']) . ', ' .
+						       ucfirst($product['Voices_Model_Contacts']['zone']) . ', ' .
+						       ucfirst($product['Voices_Model_Contacts']['village']) . ', ' .
+						       $product['Voices_Model_Contacts']['tel_number'];
+					?>
+				</td>
+			</tr>
+			<?php $counter++;?>
+			<?php endforeach;?>
+		<?php endforeach;?>
+		</tbody>
+		</table>
+	</div>
+</div>

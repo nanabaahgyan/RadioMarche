@@ -1,0 +1,261 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>RADIOMARCHE INTERFACE + VOICE PLATFORM</title>
+<style type="text/css">
+/*<![CDATA[*/
+/*body.team:before {content:"";
+  font-size: 2em;   color: #F00;   padding: 1px;   font-weight: bold;} */
+ 
+ h1 {
+ 	 background-color: #66CCFF;
+ 	 text-transform: uppercase;
+    } 
+    
+ h2 {
+ 	 text-transform: uppercase;
+ }
+ 
+ h3 {
+ 	text-transform: capitalize;
+ }
+/*]]>*/</style>
+</head>
+<body>
+<h1>RADIOMARCHE INTERFACE + VOICE PLATFORM</h1>
+<p>RadioMarche (RM) and the Voice Platform (VP) are two separate software that need to be installed 
+separately and then link together. RM gives an easy-to-use interface to the VP . VP on the other
+hand is responsible for generating the audio communique and publishing it for use by callers. Below 
+are steps for setting them up.
+</p>
+<h2>Steps for Setting Up Software</h2>
+<ul>
+  <li><a href="#chko">Check out the RM and VP from the svn repository (Emerginov.org).</a></li>
+  <li>Configure your environment.</li>
+  <ul>
+  	  <li><a href="#vhost">Setting up virtual hosting for RM</a></li>
+  	  <li><a href="#modules">Installing web server modules</a></li>
+  	  <li><a href="#db">Create database</a></li>
+  </ul>
+  <li>Configure Platforms.</li>
+  <ul>
+      <li><a href="#setrm">Setting up RM</a></li>
+      <li><a href="#setvp">Setting up VP</a></li>
+      <ul>
+      		<li><a href="#complt">Communique Platform</a></li>
+      		<li><a href="#vcplt">Voice Platform</a></li>
+      </ul>
+  </ul>
+</ul>
+
+<h2>Steps for Setting Up Hardware</h2>
+<ul>
+	<li><a href="#setpro">Setting up  Prophecy (voice browser)</a></li>
+	<li><a href="#setoff">Setting up OfficeRoute Gateway</a></li>
+</ul>
+
+<h2><a id="chko">Getting Copies of the Software</a></h2>
+<p>
+Note that one needs to register for an account on Emerginov. After the account
+creation has been approved, the user can then log in with their given credentials.
+</p>
+
+<h1>SETTING UP RADIOMARCHE</h1>
+<h2>CONFIGURING SETUP ENVIRONMENT</h2>
+<h3><a id="vhost">Setting up Virtual Hosting Environment</a></h3>
+
+An example is below (for Apache on linux). If you use other web servers, please follow the 
+on setting up virtual hosts. 
+<p>
+<VirtualHost *:80> <br />
+   DocumentRoot "/home/username/radiomarche/public/" <br />
+   ServerName servername <br />							 
+
+   <Directory "/home/username/radiomarche/public/"> <br />
+       Options All <br />
+       AllowOverride All <br />
+       Order allow,deny <br />
+       Allow from all <br />
+   </Directory> <br />
+	
+	ErrorLog ${APACHE_LOG_DIR}/radiomarche-error.log <br />
+
+	LogLevel warn <br />
+
+	CustomLog ${APACHE_LOG_DIR}/radiomarche-access.log combined <br />
+</VirtualHost>
+</p>
+<h3><a id="modules">Apache Server and PHP Modules Needed</a></h3>
+<p>
+Web server environment modules needed include:<br />
+<ul>
+  <li> Apache Server modules required:</li>
+	 <ul>
+	   <li>mod_rewrite (for the use of .htaccess)</li>
+	   <li>mod_php5	(PHP module)</li>
+	</ul>
+  <li> PHP modules required: </li>
+	 <ul>
+	   <li>curl (for accessing resources via http calls)</li>
+	   <li>gd	(image creation library)</li>
+	   <li>json	(javascript object notation)</li>
+	   <li>mysql </li>
+	   <li>pdo_mysql	(pdo for mysql)</li>
+	</ul>
+</ul>
+</p>
+
+<h3><a id="db">Create Database</a></h3>
+
+** Find create_tables.sql under public/docs folder within RadioMarche folder.
+
+<h1>CONFIGURE PLATFORMS</h1>
+
+<h3><a id="setrm">SETTING UP RADIOMARCHE</a></h3>
+<ul>
+  	<li>Find the application config file in /application/configs/application.ini</li>
+    <li> Edit the sections where appropriate:</li>
+	  <ul>
+	    <li>DB settings (your database settings)</li>
+	    <li>voice.platform.base.url (note: without the ending '/')</li>
+      </ul>
+    <li>Once up and running register with url (virtual-host-name)/account/register.
+   (This is also just clicking on REGISTER tab).</li>
+    <li> The action above (3) will create entry in the database users table.</li>
+	<li>Under user_type field of users table, change the entry 'guest' to 'ngo'. That
+   makes you and ngo user who can create and publish communique on the voice platform.</li>
+	<li>You now login with username and password under (virtual-host-name)/account/login
+   (or by just clicking on LOGIN tab).</li>
+</ul>
+</td>
+<td></td>
+</tr>
+</table>
+<h3><a id="setvp">SETTING UP THE VOICE PLATFORM</a></h3>
+<p>
+The voice platform is an entirely separate software from RadioMarche. Apart from REST
+interfaces it provides to other software for generating and publishing audio communique, it also has 
+a web interface for testing.  
+</p>
+<p>
+After setup, the web interface can be  reached through,
+<a href="">http://[your-web-root-name]/web/generate_communique.php</a> 
+<br />
+where [your-web-root-name] refers to the name given through which it can be accessed.
+</p>
+<h3><a id="complt">Communique Platform</a></h3>
+<ul>
+  <li>edit ~/lib/setup.php 
+    <ul>
+      <li>current location: radio_mali/lib/setup.php</li>
+      <li>NB: notice the $localapps flag that should be set to 0
+        (1==development setup) and corresponding session should be updated</li>
+    </ul>
+  </li>
+  <li>edit ~/audio/voice/.htaccess</li>
+</ul>
+
+<h3><a id="vcplt">Radio Platform</a></h3>
+<ul>
+  <li>edit ~/lib/setup.php 
+    <ul>
+      <li>current location: radio_mali/voices/lib/setup.php</li>
+      <li>NB: notice the $localapps flag that should be set to 0
+        (1==development setup) and corresponding session should be updated</li>
+    </ul>
+  </li>
+  <li>edit ~/audio/radio/.htaccess</li>
+</ul>
+
+<h1><a id="setpro">Setting up Prophecy</a></h1>
+<h3>Install Prophecy</h3>
+<p>An installation guide for Ubuntu can found  
+<a href="http://spring-java-ee.blogspot.nl/2010/01/installing-voxeo-prophecy-9-on-ubuntu.html"
+   target="_blank">here</a>
+</p>
+<ul>
+	<li>Download the linux version of prophecy software from Voxeo 
+	(http://voxeo.com/prophecy/)</li>
+	<li>Execute the binary file to install bunch of services, e.g. voxeo-vserver, etc</li>
+	<li>If desired use runlevel to config the start-up of the 
+	various services of prophecy namely.</li>
+	<ul>
+		<li>Voxeo-vdirectory</li>
+		<li>Voxeo-vserver</li>
+		<li>Voxeo-vmc</li>
+		<li>Voxeo-vsipmethod</li>
+		<li>Voxeo-vxml</li>
+	</ul>
+</ul>
+
+<h3>Settig up application within prophecy</h3>
+Note: You need a xml application, represented as an URL
+<ul>
+	<li>Go to 127.0.1.1:9996. Software's default run port is 9996</li>
+	<li>Username: admin / password: admin</li>
+	<li>Go to applications</li>
+	<li>Click on Add new and fill in the following</li>
+	<li>(Logical)name: offering</li>
+	<li>Virtual Platform: default</li>
+	<li>Type: VXML</li>
+	<li>Setup URL 1: of the existing vxml application (local) or remote</li>
+	<li>Specify route, which is the external ID of the application needed for.
+	Remember [Route name]</li>
+	<li>Press on save</li>
+</ul>
+
+<h1><a id="setoff">Setting up OfficeRoute Gateway</a></h1>
+<h3>Connecting OfficeRoute to Prophecy</h3>
+<ul>
+	<li>Find out the IP address. Default is 192.168.1.1</li>
+	<ul>
+		<li>Login: Admin / 2n</li>
+	</ul>
+	<li>Set up an SIP (Session Initiation Protocol) line</li>
+	<ul>
+		<li>Go to telephony services</li>
+		<li>Go to devices</li>
+		<li>Click on SIP lines</li>
+		<li>Click on [add SIP Line]</li>
+		<li>Fill in:</li>
+		<ul>
+			<li>SIP server address: enter address of Voxeo name server, e.g. 192.168.1.100</li>
+			<li>SIP domain: enter address of phophecy server, e.g. 192.168.1.100</li>
+			<li>SIP name: this refers to the Route name of application in Prophecy entered earlier. e.g offering</li>
+			<li>Display name: any convenient name</li>
+			<li>Leave default settings. </li>
+			<li>Save it</li>
+		</ul>
+		<li>Remember [line ID ] and [name]</li>
+	</ul>
+	<li>Set up an GSM service (SIM card)</li>
+		<ul>
+			<li>Go to telephony services</li>
+			<li>Go to GSM routing</li>
+			<li>Go to operator</li>
+			<li>Click on add</li>
+			<ul>
+				<li>Enter local service name , e.g. "any name"</li>
+				<li>Operator number that need to be the same as SIP name "offering"</li>
+				<li>Set VoIP line:  select [Line ID] from SIP line used ealier</li>
+				<li>Enter description</li>
+				<li>Remember service name</li>
+				<li>Save it</li>
+			</ul>
+		</ul>
+	<li>Connect GSM to services</li>
+	<ul>
+		<li>Go to GSM routing</li>
+		<li>Go to GSM</li>
+		<li>Click on add</li>
+		<ul>
+			<li>Select a GSM module, e.g. 1</li>
+			<li>Select service name</li>
+			<li>Set up description</li>
+			<li>Save</li>
+		</ul>
+	</ul>
+</ul>
+</body>
+</html>

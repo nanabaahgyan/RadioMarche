@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application xmlns:zf="http://framework.zend.com/xml/zend-config-xml/1.0/">
+	<production>
+		<phpSettings>
+			<date>
+				<timezone>Europe/Amsterdam</timezone>
+			</date>
+			<display_startup_errors>0</display_startup_errors>
+			<display_errors>0</display_errors>
+			<allow_url_fopen>1</allow_url_fopen>
+		</phpSettings>	
+		<includePaths>
+			<library><zf:const zf:name="APPLICATION_PATH"/>/../library</library>
+		</includePaths>	
+		<bootstrap>
+			<path><zf:const zf:name="APPLICATION_PATH"/>/Bootstrap.php</path>
+			<class>Bootstrap</class>
+		</bootstrap>	
+		<indexes>
+			<indexPath><zf:const zf:name="APPLICATION_PATH"/>/../data/indexes</indexPath>
+		</indexes>		
+<!--  		<appnamespace>Application</appnamespace>	 -->	
+		<resources>
+			<frontController>
+				<controllerDirectory><zf:const zf:name="APPLICATION_PATH"/>/controllers</controllerDirectory>
+				
+				<params>
+					<displayExceptions>0</displayExceptions>
+				</params>
+				
+				<moduleDirectory><zf:const zf:name="APPLICATION_PATH"/>/modules</moduleDirectory>
+			</frontController>			
+			<modules></modules>
+			
+			<layout>
+				<layoutPath><zf:const zf:name="APPLICATION_PATH"/>/layouts</layoutPath>				
+				<layout>master</layout>
+			</layout>			
+			<db>
+				<adapter>pdo_mysql</adapter>				
+				<params>
+					<host>localhost</host>
+					<username>voices</username>
+					<password>voices</password>
+					<dbname>voices</dbname>
+				</params>
+			</db>
+		</resources>		
+		<autoloaderNamespaces>
+			<voicesAppNamespace>Voices_</voicesAppNamespace>
+		</autoloaderNamespaces>		
+		<voice>
+			<platform>
+				<base>
+					<url>http://radiomali</url>
+				</base>
+			</platform>
+		</voice>		
+		<email>
+			<from>
+				<name>voices-team</name>
+				<email>no-reply@radiomarche.com</email>
+			</from>
+		</email>		
+		<item>
+			<count>
+				<per>
+					<page>3</page>
+				</per>
+			</count>
+		</item>		
+		<system>
+			<maintenance>
+				<mode>0</mode>
+			</maintenance>
+		</system>		
+		<admin value="0">
+			<first>
+				<name>Nana</name>
+			</first>
+			<last>
+				<name>Baah Gyan</name>
+			</last>
+			<email>nanabaahgyan@gmail.com</email>				
+		</admin>
+		<admin value="1">
+			<first>
+				<name>Stephane</name>
+			</first>
+			<last>
+				<name>Boyera</name>
+			</last>
+			<email>boyera@webfoundation.org</email>
+		</admin>
+	</production>
+	
+	<staging zf:extends="production"></staging>
+	
+	<testing zf:extends="production">
+		<phpSettings>
+			<display_startup_errors>1</display_startup_errors>
+			<display_errors>1</display_errors>
+		</phpSettings>
+		
+		<resources>
+			<frontController>
+				<params>
+					<displayExceptions>1</displayExceptions>
+				</params>
+			</frontController>
+		</resources>
+	</testing>
+
+	<development zf:extends="production">
+		<phpSettings>
+			<display_startup_errors>1</display_startup_errors>
+			<display_errors>1</display_errors>
+			<error_reporting>E_ALL</error_reporting>
+		</phpSettings>
+		
+		<resources>
+			<frontController>
+				<params>
+					<displayExceptions>1</displayExceptions>
+				</params>
+			</frontController>
+		</resources>
+	</development>
+</application>

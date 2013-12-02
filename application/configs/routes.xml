@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configdata>
+	<routes>
+		<!-- default route definitions -->
+		<home route="/home">
+			<defaults module="default" controller="index" action="index"/>
+		</home>
+		<about-us route="/about-us">
+			<defaults module="default" controller="index" action="about-us"/>
+		</about-us>
+		<maintenance route="/maintenance">
+			<defaults module="default" controller="index" action="maintenance"/>
+		</maintenance>	
+			
+		<!-- account route definitions -->
+		<login route="/account/login">
+			<defaults module="account" controller="account" action="login"/>
+		</login>			
+		<logout route="/account/logout">
+			<defaults module="account" controller="account" action="logout"/>
+		</logout>		
+		<register route="/account/register">
+			<defaults module="account" controller="account" action="register"/>
+		</register>		
+		<success-account routes="/account/success">
+			<defaults module="account" controller="account" action="success"/>
+		</success-account>
+		
+		<!-- ngo route definitions -->
+		<ngo route="/ngo/home">
+			<defaults module="market" controller="ngo" action="index"/>
+		</ngo>
+		<enter-new-offering-info route="/ngo/enter-new-offering-info">
+			<defaults module="market" controller="ngo" action="enter-new-offering-info"/>
+		</enter-new-offering-info>
+		<create-product-offering route="/ngo/create-product-offering">
+			<defaults module="market" controller="ngo" action="create-product-offering"/>
+		</create-product-offering>
+		<create-new-communique route="/ngo/create-new-communique">
+			<defaults module="market" controller="ngo" action="create-new-communique"/>
+		</create-new-communique>
+		<preview-communique route="/ngo/preview-communique">
+			<defaults module="market" controller="ngo" action="preview-communique"/>
+		</preview-communique>
+		<delete-communique route="/ngo/delete-communique">
+			<defaults module="market" controller="ngo" action="delete-communique"/>
+		</delete-communique>
+		<edit-communique-info route="/ngo/edit-communique-info">
+			<defaults module="market" controller="ngo" action="edit-communique-info"/>
+		</edit-communique-info>
+		<delete-communique-info route="/ngo/delete-communique-info">
+			<defaults module="market" controller="ngo" action="delete-communique-info"/>
+		</delete-communique-info>
+		<communique-store route="/ngo/communique-store/:page/*">
+			<defaults module="market" controller="ngo" action="communique-store" page="1"/>
+			<reqs page="\d+"/>
+		</communique-store>
+		<show-communique-content route="/ngo/show-communique-content">
+			<defaults module="market" controller="ngo" action="show-communique-content"/>
+		</show-communique-content>
+		<success-ngo route="/ngo/success">
+			<defaults module="maket" controller="ngo" action="success"/>
+		</success-ngo>
+		
+		<validate-form route="/async/validate-form">
+			<defaults module="default" controller="async" action="validate-form"/>
+		</validate-form>
+		
+		<!-- radio route definitions -->
+		<radio route="/radio/home">
+			<defaults module="market" controller="radio" action="index"/>		
+		</radio>
+		<read-product-offering route="/radio/read-product-offering">
+			<defaults module="market" controller="radio" action="read-product-offering"/>
+		</read-product-offering>
+		<download-product-offering route="/radio/download-product-offering">
+			<defaults module="market" controller="radio" action="download-product-offering"/>
+		</download-product-offering>
+		<success-radio route="/radio/success">
+			<defaults module="market" controller="radio" action="success"/>
+		</success-radio>
+		
+		<!-- market controller route definitions -->
+		<market-info route="/market-info">
+			<defaults module="market" controller="market-info" action="index"/>
+		</market-info>
+		<create-new route="/market-info/create-new">
+			<defaults module="market" controller="market-info" action="create-new"/>
+		</create-new>
+		
+		<!-- route for fulltext index search -->
+		<search route="/market-info/search">
+			<defaults module="market" controller="market-info" action="search"/>
+		</search>
+		
+		<!-- route for printing market infor -->
+		<print route="/market-info/print">
+			<defaults module="market" controller="market-info" action="print"/>
+		</print>
+		
+		<!-- admin route definitions -->
+		<admin route="/admin/home">
+			<defaults module="account" controller="admin" action="index"/>
+		</admin>
+		<register-new-user route="/admin/register-new-user">
+			<defaults module="account" controller="admin" action="register-new-user"/>
+		</register-new-user>
+		<validate-new-user route="/admin/validate-new-user">
+			<defaults module="account" controller="admin" action="validate-new-user"/>
+		</validate-new-user>	
+		<validate-new-offering route="/admin/validate-new-offering">
+			<defaults module="account" controller="admin" action="validate-new-offering"/>
+		</validate-new-offering>
+		<create route="/admin/market/fulltext-index/create">
+			<defaults module="account" controller="admin" action="create-fulltext-index"/>
+		</create>
+		<synchronize-com-platform route="/admin/sync-com-platform">
+			<defaults module="account" controller="admin" action="synchronize-communique-platform"/>
+		</synchronize-com-platform>
+		<add-new-user route="/admin/add-new-user">
+			<defaults module="account" controller="admin" action="add-new-user"/>
+		</add-new-user>
+		<remove-user route="/admin/remove-user">
+			<defaults module="account" controller="admin" action="delete-user"/>
+		</remove-user>
+		<success-admin route="/admin/success">
+			<defauts module="account" controller="admin" action="success"/>
+		</success-admin>
+		
+		<!-- REST route definitions -->
+		<rest route="/rest">
+			<defaults module="market" controller="rest" action="index"/>
+		</rest>
+	</routes>
+</configdata>

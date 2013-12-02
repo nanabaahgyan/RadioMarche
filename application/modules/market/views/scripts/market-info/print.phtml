@@ -1,0 +1,33 @@
+<?php $this->headTitle('Preview');?>
+<h2><?php echo $this->translate('preview');?></h2>
+<table>
+	<tr>
+		<th><?php echo $this->translate('form-farmer-zone');?></th>
+		<th><?php echo $this->translate('form-village-name');?></th>
+		<th><?php echo $this->translate('form-product-name');?></th>
+		<th><?php echo $this->translate('form-quantity-metric');?></th>
+		<th><?php echo $this->translate('form-product-quantity');?></th>
+		<th><?php echo $this->translate('form-product-quality');?></th>
+		<th><?php echo $this->translate('form-price');?></th>
+		<th><?php echo $this->translate('form-contact');?></th>
+	</tr>
+	<?php foreach ($this->prods as $fKey => $fValue):
+			foreach ($fValue as $sKey => $sValue):
+	?>
+	<tr>
+		<td><?php echo $this->escape(ucfirst($sValue['Voices_Model_Contacts']['zone']));?></td>
+		<td><?php echo $this->escape(ucfirst($sValue['Voices_Model_Contacts']['village']));?></td>
+		<td><?php echo $this->escape(ucfirst($sValue['prod_name']));?></td>
+		<td><?php echo $this->escape($sValue['unit_measure']);?></td>
+		<td><?php echo $this->escape($sValue['quantity']);?></td>
+		<td><?php echo $this->escape($sValue['quality']);?></td>
+		<td><?php echo $this->escape($sValue['price']);?></td>
+		<td><?php echo $this->escape(ucfirst($sValue['Voices_Model_Contacts']['first_name'])) . ' ' .
+					   $this->escape(ucfirst($sValue['Voices_Model_Contacts']['last_name'])) . ' '. 'TEL: '.
+					   $this->escape(ucfirst($sValue['Voices_Model_Contacts']['tel_number']));
+		    ?></td>
+	</tr>
+			<?php endforeach;?>
+		<?php endforeach;?>
+</table>
+<!--<?php echo $this->form;?> -->

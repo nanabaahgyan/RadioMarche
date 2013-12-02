@@ -1,0 +1,64 @@
+************************************************************
+******Creation Timestamp: 2012-03-26 16:41:18******
+******Communique Platform URL: http://radiomali******
+************************************************************
+{"comm_id":"4f0d73558fa00","content":{"date":"11-01-2012","number":"29","product":[{"id":"5","price":2000,"quantity":200,"contact":"13"},{"id":"3","price":25,"quantity":500,"contact":"7"},{"id":"1","price":3,"quantity":342,"contact":"19"}]}}
+{"comm_id":"4f0d743dae3d4","content":{"date":"11-01-2012","number":"12","product":[{"id":"3","price":25,"quantity":500,"contact":"7"},{"id":"5","price":2000,"quantity":60,"contact":"3"},{"id":"1","price":3,"quantity":342,"contact":"19"}]}}
+{"comm_id":"4f0ee8e4be4b5","content":{"date":"12-01-2012","number":"34","product":[{"id":"3","price":25,"quantity":500,"contact":"7"},{"id":"5","price":2000,"quantity":60,"contact":"3"},{"id":"1","price":789,"quantity":100,"contact":"13"}]}}
+{"comm_id":"4f0f29ee60085","content":{"date":"12-01-2012","number":"53","product":[{"id":"5","price":2000,"quantity":200,"contact":"13"},{"id":"3","price":25,"quantity":500,"contact":"7"},{"id":"1","price":789,"quantity":100,"contact":"13"}]}}
+{"comm_id":"4f0f2b4ac7d65","content":{"date":"12-01-2012","number":"13","product":[{"id":"5","price":2000,"quantity":200,"contact":"13"},{"id":"3","price":25,"quantity":500,"contact":"7"},{"id":"5","price":2000,"quantity":60,"contact":"3"},{"id":"1","price":3664,"quantity":567,"contact":"14"}]}}
+{"comm_id":"4f1432c3b6377","content":{"date":"16-01-2012","number":"1","product":[{"id":"1","price":1500,"quantity":2000,"contact":"12"},{"id":"1","price":4000,"quantity":1400,"contact":"15"},{"id":"5","price":1334,"quantity":3000,"contact":"12"}]}}
+{"comm_id":"4f159aaebd773","content":{"date":"18-01-2012","number":"3","product":[{"id":"5","price":5000,"quantity":450,"contact":"15"},{"id":"2","price":2,"quantity":1000,"contact":"7"}]}}
+************************************************************
+******   Creation Timestamp: 2012-03-26 16:43:54   ******
+******   Communique Platform URL: http://radiomali   ******
+************************************************************
+{"comm_id":"4f0d73558fa00","content":{"date":"11-01-2012","number":"29","product":[{"id":"5","price":2000,"quantity":200,"contact":"13"},{"id":"3","price":25,"quantity":500,"contact":"7"},{"id":"1","price":3,"quantity":342,"contact":"19"}]}}
+{"comm_id":"4f0d743dae3d4","content":{"date":"11-01-2012","number":"12","product":[{"id":"3","price":25,"quantity":500,"contact":"7"},{"id":"5","price":2000,"quantity":60,"contact":"3"},{"id":"1","price":3,"quantity":342,"contact":"19"}]}}
+{"comm_id":"4f0ee8e4be4b5","content":{"date":"12-01-2012","number":"34","product":[{"id":"3","price":25,"quantity":500,"contact":"7"},{"id":"5","price":2000,"quantity":60,"contact":"3"},{"id":"1","price":789,"quantity":100,"contact":"13"}]}}
+{"comm_id":"4f0f29ee60085","content":{"date":"12-01-2012","number":"53","product":[{"id":"5","price":2000,"quantity":200,"contact":"13"},{"id":"3","price":25,"quantity":500,"contact":"7"},{"id":"1","price":789,"quantity":100,"contact":"13"}]}}
+{"comm_id":"4f0f2b4ac7d65","content":{"date":"12-01-2012","number":"13","product":[{"id":"5","price":2000,"quantity":200,"contact":"13"},{"id":"3","price":25,"quantity":500,"contact":"7"},{"id":"5","price":2000,"quantity":60,"contact":"3"},{"id":"1","price":3664,"quantity":567,"contact":"14"}]}}
+{"comm_id":"4f1432c3b6377","content":{"date":"16-01-2012","number":"1","product":[{"id":"1","price":1500,"quantity":2000,"contact":"12"},{"id":"1","price":4000,"quantity":1400,"contact":"15"},{"id":"5","price":1334,"quantity":3000,"contact":"12"}]}}
+{"comm_id":"4f159aaebd773","content":{"date":"18-01-2012","number":"3","product":[{"id":"5","price":5000,"quantity":450,"contact":"15"},{"id":"2","price":2,"quantity":1000,"contact":"7"}]}}
+************************************************************
+******   Timestamp: 2012-03-26 16:49:07   ******
+   ******
+Communique Platform URL: http://radiomali************************************************************
+******   Timestamp: 2012-03-26 16:49:07   ******
+   ******
+******   ************************************************************
+******   Timestamp: 2012-03-26 16:49:07   ******
+   ******
+Communique Platform URL: http://radiomali************************************************************
+******   Timestamp: 2012-03-26 16:49:07   ******
+   ******
+************************************************************
+{"comm_id":"4f0d73558fa00","content":{"date":"11-01-2012","number":"29","product":[{"id":"5","price":2000,"quantity":200,"contact":"13"},{"id":"3","price":25,"quantity":500,"contact":"7"},{"id":"1","price":3,"quantity":342,"contact":"19"}]}}
+{"comm_id":"4f0d743dae3d4","content":{"date":"11-01-2012","number":"12","product":[{"id":"3","price":25,"quantity":500,"contact":"7"},{"id":"5","price":2000,"quantity":60,"contact":"3"},{"id":"1","price":3,"quantity":342,"contact":"19"}]}}
+{"comm_id":"4f0ee8e4be4b5","content":{"date":"12-01-2012","number":"34","product":[{"id":"3","price":25,"quantity":500,"contact":"7"},{"id":"5","price":2000,"quantity":60,"contact":"3"},{"id":"1","price":789,"quantity":100,"contact":"13"}]}}
+{"comm_id":"4f0f29ee60085","content":{"date":"12-01-2012","number":"53","product":[{"id":"5","price":2000,"quantity":200,"contact":"13"},{"id":"3","price":25,"quantity":500,"contact":"7"},{"id":"1","price":789,"quantity":100,"contact":"13"}]}}
+{"comm_id":"4f0f2b4ac7d65","content":{"date":"12-01-2012","number":"13","product":[{"id":"5","price":2000,"quantity":200,"contact":"13"},{"id":"3","price":25,"quantity":500,"contact":"7"},{"id":"5","price":2000,"quantity":60,"contact":"3"},{"id":"1","price":3664,"quantity":567,"contact":"14"}]}}
+{"comm_id":"4f1432c3b6377","content":{"date":"16-01-2012","number":"1","product":[{"id":"1","price":1500,"quantity":2000,"contact":"12"},{"id":"1","price":4000,"quantity":1400,"contact":"15"},{"id":"5","price":1334,"quantity":3000,"contact":"12"}]}}
+{"comm_id":"4f159aaebd773","content":{"date":"18-01-2012","number":"3","product":[{"id":"5","price":5000,"quantity":450,"contact":"15"},{"id":"2","price":2,"quantity":1000,"contact":"7"}]}}
+************************************************************
+******   Timestamp: 2012-03-26 16:50:42   ******
+******   Communique Platform URL: http://radiomali   ******
+************************************************************
+{"comm_id":"4f0d73558fa00","content":{"date":"11-01-2012","number":"29","product":[{"id":"5","price":2000,"quantity":200,"contact":"13"},{"id":"3","price":25,"quantity":500,"contact":"7"},{"id":"1","price":3,"quantity":342,"contact":"19"}]}}
+{"comm_id":"4f0d743dae3d4","content":{"date":"11-01-2012","number":"12","product":[{"id":"3","price":25,"quantity":500,"contact":"7"},{"id":"5","price":2000,"quantity":60,"contact":"3"},{"id":"1","price":3,"quantity":342,"contact":"19"}]}}
+{"comm_id":"4f0ee8e4be4b5","content":{"date":"12-01-2012","number":"34","product":[{"id":"3","price":25,"quantity":500,"contact":"7"},{"id":"5","price":2000,"quantity":60,"contact":"3"},{"id":"1","price":789,"quantity":100,"contact":"13"}]}}
+{"comm_id":"4f0f29ee60085","content":{"date":"12-01-2012","number":"53","product":[{"id":"5","price":2000,"quantity":200,"contact":"13"},{"id":"3","price":25,"quantity":500,"contact":"7"},{"id":"1","price":789,"quantity":100,"contact":"13"}]}}
+{"comm_id":"4f0f2b4ac7d65","content":{"date":"12-01-2012","number":"13","product":[{"id":"5","price":2000,"quantity":200,"contact":"13"},{"id":"3","price":25,"quantity":500,"contact":"7"},{"id":"5","price":2000,"quantity":60,"contact":"3"},{"id":"1","price":3664,"quantity":567,"contact":"14"}]}}
+{"comm_id":"4f1432c3b6377","content":{"date":"16-01-2012","number":"1","product":[{"id":"1","price":1500,"quantity":2000,"contact":"12"},{"id":"1","price":4000,"quantity":1400,"contact":"15"},{"id":"5","price":1334,"quantity":3000,"contact":"12"}]}}
+{"comm_id":"4f159aaebd773","content":{"date":"18-01-2012","number":"3","product":[{"id":"5","price":5000,"quantity":450,"contact":"15"},{"id":"2","price":2,"quantity":1000,"contact":"7"}]}}
+************************************************************
+******   Timestamp: 2012-03-26 16:52:08
+******   Communique Platform URL: http://radiomali
+************************************************************
+{"comm_id":"4f0d73558fa00","content":{"date":"11-01-2012","number":"29","product":[{"id":"5","price":2000,"quantity":200,"contact":"13"},{"id":"3","price":25,"quantity":500,"contact":"7"},{"id":"1","price":3,"quantity":342,"contact":"19"}]}}
+{"comm_id":"4f0d743dae3d4","content":{"date":"11-01-2012","number":"12","product":[{"id":"3","price":25,"quantity":500,"contact":"7"},{"id":"5","price":2000,"quantity":60,"contact":"3"},{"id":"1","price":3,"quantity":342,"contact":"19"}]}}
+{"comm_id":"4f0ee8e4be4b5","content":{"date":"12-01-2012","number":"34","product":[{"id":"3","price":25,"quantity":500,"contact":"7"},{"id":"5","price":2000,"quantity":60,"contact":"3"},{"id":"1","price":789,"quantity":100,"contact":"13"}]}}
+{"comm_id":"4f0f29ee60085","content":{"date":"12-01-2012","number":"53","product":[{"id":"5","price":2000,"quantity":200,"contact":"13"},{"id":"3","price":25,"quantity":500,"contact":"7"},{"id":"1","price":789,"quantity":100,"contact":"13"}]}}
+{"comm_id":"4f0f2b4ac7d65","content":{"date":"12-01-2012","number":"13","product":[{"id":"5","price":2000,"quantity":200,"contact":"13"},{"id":"3","price":25,"quantity":500,"contact":"7"},{"id":"5","price":2000,"quantity":60,"contact":"3"},{"id":"1","price":3664,"quantity":567,"contact":"14"}]}}
+{"comm_id":"4f1432c3b6377","content":{"date":"16-01-2012","number":"1","product":[{"id":"1","price":1500,"quantity":2000,"contact":"12"},{"id":"1","price":4000,"quantity":1400,"contact":"15"},{"id":"5","price":1334,"quantity":3000,"contact":"12"}]}}
+{"comm_id":"4f159aaebd773","content":{"date":"18-01-2012","number":"3","product":[{"id":"5","price":5000,"quantity":450,"contact":"15"},{"id":"2","price":2,"quantity":1000,"contact":"7"}]}}

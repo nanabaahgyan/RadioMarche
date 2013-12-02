@@ -1,0 +1,19 @@
+<script type="text/javascript">
+	$(function() {
+	    $('.info, .error').delay(5600).fadeOut();
+	}); // <-- time in milliseconds
+</script>
+<?php
+if (sizeof($this->priorityMessages)) {
+    foreach ($this->priorityMessages as $label=>$messages) {
+        if (count($messages)) {
+			echo '<div class="'.$label.'">';
+            echo '<ul class="'.$label.'_message">';
+            foreach ($messages as $message) {
+                echo '<li>'.$message.'</li>';
+            }
+			echo '</ul>';
+			echo '</div>';
+        }
+    }
+}
